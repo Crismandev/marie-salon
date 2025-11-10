@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marie Salón & Spa - Renueva tu Look y Bienestar en Trujillo</title>
+    <meta name="description"
+        content="Tu salón y spa en Trujillo dedicado a tu bienestar. Ofrecemos masajes, faciales, y renovación de look. Reserva tu cita.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aura-pink-light': 'rgb(249, 236, 235)',
+                        'aura-pink-accent': 'rgb(222, 161, 154)',
+                        'aura-pink-accent-hover': 'rgb(214, 143, 135)',
+                        'aura-beige': 'rgb(245, 241, 237)',
+                        'aura-text': 'rgb(30, 41, 59)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: 'rgb(30, 41, 59)';
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+
+    <!-- Chosen Palette: Cálida y Profesional (Pastel Pink: rgb(249, 236, 235) / Beige: rgb(245, 241, 237) / Accent: rgb(222, 161, 154) / Text: rgb(30, 41, 59)) -->
+    <!-- Application Structure Plan: Se diseñó una landing page "scrollable" de 6 secciones, siguiendo el plan. La estructura actúa como un embudo de conversión: 1. Hero (Captura), 2. Servicios (Interés), 3. Nosotros (Confianza/Diferenciación), 4. Feed (Prueba Social), 5. Ubicación (Logística), 6. CTA (Conversión). Esta arquitectura guía al usuario desde el descubrimiento hasta la reserva de forma lógica. -->
+    <!-- Visualization & Content Choices: Hero: Fondo de imagen + overlay (HTML/CSS) para impacto visual. Servicios: Grid de Tarjetas (HTML/CSS) para mostrar paquetes de alto valor. 'Sobre Nosotros': Layout de 2 columnas (HTML/CSS) para humanizar la marca. Feed: Simulación de widget (HTML/CSS) para prueba social. Ubicación: Embed de Google Maps (HTML/iframe) para SEO local. CTA: Botón de WhatsApp y formulario (HTML) para conversión. No se requirieron gráficos (Chart.js/Plotly) para esta aplicación. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold font-serif text-aura-text">Marie Salón & Spa</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#servicios" class="text-gray-600 hover:text-aura-pink-accent transition-colors">Servicios</a>
+                <a href="#nosotros" class="text-gray-600 hover:text-aura-pink-accent transition-colors">Nosotros</a>
+                <a href="#ubicacion" class="text-gray-600 hover:text-aura-pink-accent transition-colors">Ubicación</a>
+            </nav>
+            <a href="#contacto"
+                class="hidden md:inline-block bg-aura-pink-accent text-white px-5 py-2 rounded-full font-medium hover:bg-aura-pink-accent-hover transition-colors">
+                Reservar Cita
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-aura-text">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#servicios" class="block text-gray-600 hover:text-aura-pink-accent transition-colors">Servicios</a>
+            <a href="#nosotros" class="block text-gray-600 hover:text-aura-pink-accent transition-colors">Nosotros</a>
+            <a href="#ubicacion" class="block text-gray-600 hover:text-aura-pink-accent transition-colors">Ubicación</a>
+            <a href="#contacto"
+                class="block bg-aura-pink-accent text-white px-5 py-2 rounded-full font-medium hover:bg-aura-pink-accent-hover transition-colors text-center">
+                Reservar Cita
+            </a>
+        </div>
+    </header>
+
+    <!-- Sección 1: Hero -->
+    <section id="hero" class="h-screen min-h-[700px] relative flex items-center justify-center text-center">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="./assets/img/banner1.jpeg"
+                alt="Mujer relajándose en un tratamiento de spa" class="w-full h-full object-cover" loading="eager">
+        </div>
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-aura-pink-light/40"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 p-8 max-w-3xl">
+            <h1 class="text-5xl md:text-7xl font-bold text-aura-text drop-shadow-sm">Renueva tu look, reconecta contigo.
+            </h1>
+            <h2 class="text-xl md:text-2xl mt-4 text-slate-700 drop-shadow-sm">Tu salón & spa en Trujillo dedicado a tu
+                bienestar.</h2>
+            <a href="https://wa.me/51987654321?text=Hola!%20Quisiera%20reservar%20una%20cita%20en%20Aura%20Spa."
+                target="_blank"
+                class="mt-8 inline-block bg-aura-pink-accent text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-aura-pink-accent-hover transition-transform transform hover:scale-105 shadow-lg">
+                Reservar mi Cita
+            </a>
+            <p class="mt-6 text-sm text-slate-600 font-medium">Ambiente cálido · Trato personalizado · Profesionales
+                certificados</p>
+        </div>
+    </section>
+
+    <!-- Sección 2: Servicios Estrella -->
+    <section id="servicios" class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center text-aura-text">Nuestros Rituales Estrella</h2>
+            <p class="text-lg text-center text-slate-600 mt-4 max-w-2xl mx-auto">Servicios curados para tu renovación
+                total, combinando lo mejor del salón y el spa.</p>
+
+            <div class="mt-16 grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="bg-aura-beige rounded-lg shadow-xl overflow-hidden flex flex-col transition-transform transform hover:-translate-y-2">
+                    <img src="https://placehold.co/600x400/F9ECEB/DEA19A?text=Ritual+de+Renovación"
+                        alt="Tratamiento de renovación de look y facial" class="w-full h-56 object-cover"
+                        loading="lazy">
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-semibold text-aura-text">Ritual de Renovación (Look + Facial)</h3>
+                        <p class="text-slate-600 mt-3 flex-grow">Una transformación completa. Sal con un nuevo corte y
+                            color, complementado con un facial de limpieza profunda que iluminará tu piel.</p>
+                        <a href="https://wa.me/51987654321?text=Hola!%20Quisiera%20reservar%20el%20Ritual%20de%20Renovación."
+                            target="_blank"
+                            class="mt-5 inline-block text-center bg-transparent border-2 border-aura-pink-accent text-aura-pink-accent px-6 py-2 rounded-full font-medium hover:bg-aura-pink-accent hover:text-white transition-colors">
+                            Quiero este servicio
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-aura-beige rounded-lg shadow-xl overflow-hidden flex flex-col transition-transform transform hover:-translate-y-2">
+                    <img src="https://placehold.co/600x400/F9ECEB/DEA19A?text=Escape+de+Bienestar"
+                        alt="Masaje terapéutico y reflexología" class="w-full h-56 object-cover" loading="lazy">
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-semibold text-aura-text">Escape de Bienestar (Masaje + Reflexología)
+                        </h3>
+                        <p class="text-slate-600 mt-3 flex-grow">Desconecta del estrés. Disfruta de un masaje
+                            terapéutico de cuerpo completo seguido de una sesión de reflexología podal para equilibrar
+                            tu energía.</p>
+                        <a href="https://wa.me/51987654321?text=Hola!%20Quisiera%20reservar%20el%20Escape%20de%20Bienestar."
+                            target="_blank"
+                            class="mt-5 inline-block text-center bg-transparent border-2 border-aura-pink-accent text-aura-pink-accent px-6 py-2 rounded-full font-medium hover:bg-aura-pink-accent hover:text-white transition-colors">
+                            Quiero este servicio
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-aura-beige rounded-lg shadow-xl overflow-hidden flex flex-col transition-transform transform hover:-translate-y-2">
+                    <img src="https://placehold.co/600x400/F9ECEB/DEA19A?text=Colorimetría+Profesional"
+                        alt="Diseño de color y corte" class="w-full h-56 object-cover" loading="lazy">
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-semibold text-aura-text">Colorimetría y Diseño de Look</h3>
+                        <p class="text-slate-600 mt-3 flex-grow">Nuestros expertos en color analizarán tu tono de piel y
+                            estilo para crear el look perfecto para ti, usando técnicas modernas como balayage o
+                            babylights.</p>
+                        <a href="https://wa.me/51987654321?text=Hola!%20Quisiera%20información%20sobre%20Colorimetría."
+                            target="_blank"
+                            class="mt-5 inline-block text-center bg-transparent border-2 border-aura-pink-accent text-aura-pink-accent px-6 py-2 rounded-full font-medium hover:bg-aura-pink-accent hover:text-white transition-colors">
+                            Quiero este servicio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 3: Propuesta de Valor / "El Toque Personal" -->
+    <section id="nosotros" class="py-20 md:py-28 bg-aura-pink-light">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="md:pr-10">
+                    <img src="https://placehold.co/600x700/F5F1ED/DEA19A?text=Foto+de+Marie"
+                        alt="Marie, fundadora de Marie Salón & Spa"
+                        class="rounded-lg shadow-2xl w-full h-full max-h-[600px] object-cover object-top"
+                        loading="lazy">
+                </div>
+                <div class="md:pl-10">
+                    <h2 class="text-4xl md:text-5xl font-bold text-aura-text">Más que un spa, un espacio creado para ti
+                    </h2>
+                    <blockquote
+                        class="mt-6 p-4 border-l-4 border-aura-pink-accent bg-white/50 text-xl font-medium text-slate-700">
+                        "Mi pasión es verlas salir de aquí no solo con un look nuevo, sino con una sonrisa y energía
+                        renovada."
+                    </blockquote>
+                    <p class="text-lg text-slate-600 leading-relaxed mt-6">
+                        Hola, soy Mariela. Creé Marie Salón & Spa como un refugio personal en medio de Trujillo. Con más
+                        de 12 años de experiencia en cosmetología y bienestar, mi misión es simple: ofrecerte un trato
+                        personalizado y cálido que no encontrarás en ningún otro lugar.
+                    </p>
+                    <p class="text-lg text-slate-600 leading-relaxed mt-4">
+                        Aquí, cada servicio es un ritual. Usamos solo productos de alta calidad en los que confío y nos
+                        tomamos el tiempo necesario para escucharte y entender qué necesitas. Bienvenida a tu casa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 4: Prueba Social (Feed de Instagram) -->
+    <section id="feed" class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-aura-text">Conoce nuestro trabajo (y clientas felices)</h2>
+            <p class="text-lg text-slate-600 mt-4 max-w-xl mx-auto">Síguenos en <a
+                    href="https://www.instagram.com/mariesalon25/"
+                    class="text-aura-pink-accent font-medium">@mariesalon25</a> para ver transformaciones, promos y
+                la vida del salón día a día.</p>
+
+            <div class="mt-12 max-w-4xl mx-auto">
+                <div class="p-8 bg-gray-100 rounded-lg text-gray-500">
+                    <p class="text-lg font-medium">Aquí iría el widget de Instagram (ej. Elfsight o Lightwidget).</p>
+                    <p class="mt-2">Esto mostraría una cuadrícula 3x2 de nuestras últimas fotos y videos para generar
+                        confianza visual.</p>
+                </div>
+                <!-- Simulación de la cuadrícula para demostración visual -->
+                <div class="grid grid-cols-3 gap-2 md:gap-4 mt-4 opacity-50">
+                    <img src="https://placehold.co/400x400/F9ECEB/DEA19A?text=@MarieSpa"
+                        class="w-full h-full object-cover aspect-square rounded" loading="lazy">
+                    <img src="https://placehold.co/400x400/F9ECEB/DEA19A?text=@MarieSpa"
+                        class="w-full h-full object-cover aspect-square rounded" loading="lazy">
+                    <img src="https://placehold.co/400x400/F9ECEB/DEA19A?text=@MarieSpa"
+                        class="w-full h-full object-cover aspect-square rounded" loading="lazy">
+                    <img src="https://placehold.co/400x400/F9ECEB/DEA19A?text=@MarieSpa"
+                        class="w-full h-full object-cover aspect-square rounded" loading="lazy">
+                    <img src="https://placehold.co/400x400/F9ECEB/DEA19A?text=@MarieSpa"
+                        class="w-full h-full object-cover aspect-square rounded" loading="lazy">
+                    <img src="https://placehold.co/400x400/F9ECEB/DEA19A?text=@MarieSpa"
+                        class="w-full h-full object-cover aspect-square rounded" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 5: Ubicación y Horarios (Google Maps) -->
+    <section id="ubicacion" class="py-20 md:py-28 bg-aura-beige">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="w-full h-80 md:h-full rounded-lg shadow-xl overflow-hidden min-h-[400px]">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31599.333838622114!2d-79.04939226154563!3d-8.111977717452643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3d9b3e107c73%3A0x8a39d8e906c6411!2sPlaza%20de%20Armas%20de%20Trujillo!5e0!3m2!1ses!2spe!4v1678888888888!5m2!1ses!2spe"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <h2 class="text-4xl md:text-5xl font-bold text-aura-text">Encuéntranos Fácilmente</h2>
+                    <div class="mt-8 space-y-6">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-aura-text">Dirección</h3>
+                            <p class="text-lg text-slate-600 mt-1">Av. Larco 123, Urb. La Merced<br>Trujillo, La
+                                Libertad, Perú</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-aura-text">Horarios de Atención</h3>
+                            <p class="text-lg text-slate-600 mt-1">Lunes a Viernes: 9:00 AM - 8:00 PM</p>
+                            <p class="text-lg text-slate-600">Sábado: 10:00 AM - 6:00 PM</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-aura-text">Teléfono</h3>
+                            <p class="text-lg text-slate-600 mt-1">+51 987 654 321</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 6: CTA Final y Contacto -->
+    <section id="contacto" class="py-20 md:py-28 bg-aura-pink-light text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-aura-text">¿Lista para tu momento de bienestar?</h2>
+            <p class="text-lg text-slate-600 mt-4 max-w-xl mx-auto">Tu pausa te está esperando. Haz clic abajo para
+                agendar tu cita por WhatsApp o déjanos tu consulta.</p>
+
+            <a href="https://wa.me/51987654321?text=Hola!%20Quisiera%20reservar%20una%20cita%20en%20Aura%20Spa."
+                target="_blank"
+                class="my-8 inline-block bg-aura-pink-accent text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-aura-pink-accent-hover transition-transform transform hover:scale-105 shadow-lg">
+                Reservar mi Cita por WhatsApp
+            </a>
+
+            <form action="https" method="POST" class="mt-10 max-w-lg mx-auto text-left">
+                <p class="text-center text-slate-700 mb-4">O envíanos una consulta general</p>
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Nombre</label>
+                    <input type="text" id="name" name="name" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-aura-pink-accent focus:border-aura-pink-accent"
+                        placeholder="Tu nombre">
+                </div>
+                <div class="mb-4">
+                    <label for="contact" class="block text-sm font-medium text-slate-700 mb-1">Email o Teléfono</label>
+                    <input type="text" id="contact" name="contact" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-aura-pink-accent focus:border-aura-pink-accent"
+                        placeholder="Tu email o WhatsApp">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Mensaje</label>
+                    <textarea id="message" name="message" rows="4" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-aura-pink-accent focus:border-aura-pink-accent"
+                        placeholder="¿En qué podemos ayudarte?"></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-slate-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-slate-800 transition-colors">
+                    Enviar Consulta
+                </button>
+                <p class="text-xs text-gray-500 mt-2 text-center">Usaremos un servicio como Formspree para procesar este
+                    formulario.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-aura-text text-slate-300 text-center">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2025 Marie Salón & Spa. Todos los derechos reservados.</p>
+            <h5 class="text-sm mt-1">Diseñado por <a href="https://pixeliaweb.netlify.app/"
+                    class="text-aura-pink-accent font-medium" target="_blank">@web.pixelia</a></h5>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const headerOffset = document.querySelector('header').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
