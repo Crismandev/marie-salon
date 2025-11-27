@@ -51,12 +51,6 @@
 
 <body class="bg-white">
 
-    <!-- Chosen Palette: Cálida y Profesional (Pastel Pink: rgb(249, 236, 235) / Beige: rgb(245, 241, 237) / Accent: rgb(222, 161, 154) / Text: rgb(30, 41, 59)) -->
-    <!-- Application Structure Plan: Se diseñó una landing page "scrollable" de 6 secciones, siguiendo el plan. La estructura actúa como un embudo de conversión: 1. Hero (Captura), 2. Servicios (Interés), 3. Nosotros (Confianza/Diferenciación), 4. Feed (Prueba Social), 5. Ubicación (Logística), 6. CTA (Conversión). Esta arquitectura guía al usuario desde el descubrimiento hasta la reserva de forma lógica. -->
-    <!-- Visualization & Content Choices: Hero: Fondo de imagen + overlay (HTML/CSS) para impacto visual. Servicios: Grid de Tarjetas (HTML/CSS) para mostrar paquetes de alto valor. 'Sobre Nosotros': Layout de 2 columnas (HTML/CSS) para humanizar la marca. Feed: Simulación de widget (HTML/CSS) para prueba social. Ubicación: Embed de Google Maps (HTML/iframe) para SEO local. CTA: Botón de WhatsApp y formulario (HTML) para conversión. No se requirieron gráficos (Chart.js/Plotly) para esta aplicación. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-
-    <!-- Header / Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold font-serif text-aura-text">Marie Salón & Spa</a>
@@ -76,7 +70,6 @@
                 </svg>
             </button>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
             <a href="#servicios" class="block text-gray-600 hover:text-aura-pink-accent transition-colors">Servicios</a>
             <a href="#nosotros" class="block text-gray-600 hover:text-aura-pink-accent transition-colors">Nosotros</a>
@@ -88,23 +81,19 @@
         </div>
     </header>
 
-    <!-- Sección 1: Hero -->
     <section id="hero" class="h-screen min-h-[700px] relative flex items-center justify-center text-center">
-        <!-- Background Image -->
         <div class="absolute inset-0">
             <img src="./assets/img/banner1.jpeg"
                 alt="Mujer relajándose en un tratamiento de spa" class="w-full h-full object-cover" loading="eager">
         </div>
-        <!-- Overlay -->
         <div class="absolute inset-0 bg-aura-pink-light/40"></div>
 
-        <!-- Content -->
         <div class="relative z-10 p-8 max-w-3xl transform translate-y-48 md:translate-y-51">
             <h1 class="text-6xl md:text-6xl font-bold text-aura-text drop-shadow-sm">Renueva tu look, reconecta contigo.
             </h1>
             <h2 class="text-xl md:text-2xl mt-4 text-slate-700 drop-shadow-sm">Tu salón & spa en Trujillo dedicado a tu
                 bienestar.</h2>
-            <a href="https://wa.me/51987654321?text=Hola!%20Quisiera%20reservar%20una%20cita%20en%20Aura%20Spa."
+            <a href="https://wa.me/51956672297?text=Hola!%20Quisiera%20reservar%20una%20cita%20en%20Aura%20Spa."
                 target="_blank"
                 class="mt-8 inline-block bg-aura-pink-accent text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-aura-pink-accent-hover transition-transform transform hover:scale-105 shadow-lg">
                 Reservar mi Cita
@@ -114,7 +103,24 @@
         </div>
     </section>
 
-    <!-- Sección 2: Servicios Estrella -->
+    <section id="promociones" class="py-20 md:py-28 bg-aura-pink-light">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-aura-text">Promociones</h2>
+            <div class="mt-8 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-xl p-8">
+                    <h3 class="text-2xl font-semibold text-aura-text">Promos Martes y Jueves</h3>
+                    <p class="text-lg text-slate-700 mt-3">Alisados y color — <span class="font-semibold text-aura-pink-accent">20% de Descuento</span></p>
+                    <a href="https://wa.me/51956672297?text=Hola!%20Quiero%20aprovechar%20las%20promos%20de%20Martes%20y%20Jueves%20(Alisados%20y%20color%20-%2020%25%20de%20descuento)" target="_blank" class="mt-6 inline-block bg-aura-pink-accent text-white px-6 py-3 rounded-full font-medium hover:bg-aura-pink-accent-hover transition-colors">Reservar Promo</a>
+                </div>
+                <div class="bg-white rounded-lg shadow-xl p-8">
+                    <h3 class="text-2xl font-semibold text-aura-text">Consulta y diagnóstico</h3>
+                    <p class="text-lg text-slate-700 mt-3">Te asesoramos para elegir el mejor alisado y tono de color según tu cabello.</p>
+                    <a href="https://wa.me/51956672297?text=Hola!%20Quiero%20una%20consulta%20para%20alisado%20y%20color" target="_blank" class="mt-6 inline-block bg-transparent border-2 border-aura-pink-accent text-aura-pink-accent px-6 py-3 rounded-full font-medium hover:bg-aura-pink-accent hover:text-white transition-colors">Agendar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="servicios" class="py-20 md:py-28 bg-white">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-bold text-center text-aura-text">Nuestros Rituales Estrella</h2>
@@ -122,7 +128,6 @@
                 total, combinando lo mejor del salón y el spa.</p>
 
             <div class="mt-16 grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
                 <div
                     class="bg-aura-beige rounded-lg shadow-xl overflow-hidden flex flex-col transition-transform transform hover:-translate-y-2">
                     <img src="https://placehold.co/600x400/F9ECEB/DEA19A?text=Ritual+de+Renovación"
@@ -132,7 +137,7 @@
                         <h3 class="text-2xl font-semibold text-aura-text">Ritual de Renovación (Look + Facial)</h3>
                         <p class="text-slate-600 mt-3 flex-grow">Una transformación completa. Sal con un nuevo corte y
                             color, complementado con un facial de limpieza profunda que iluminará tu piel.</p>
-                        <a href="https://wa.me/51987654321?text=Hola!%20Quisiera%20reservar%20el%20Ritual%20de%20Renovación."
+                        <a href="https://wa.me/51956672297?text=Hola!%20Quisiera%20reservar%20el%20Ritual%20de%20Renovación."
                             target="_blank"
                             class="mt-5 inline-block text-center bg-transparent border-2 border-aura-pink-accent text-aura-pink-accent px-6 py-2 rounded-full font-medium hover:bg-aura-pink-accent hover:text-white transition-colors">
                             Quiero este servicio
@@ -140,7 +145,6 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
                 <div
                     class="bg-aura-beige rounded-lg shadow-xl overflow-hidden flex flex-col transition-transform transform hover:-translate-y-2">
                     <img src="https://placehold.co/600x400/F9ECEB/DEA19A?text=Escape+de+Bienestar"
@@ -151,7 +155,7 @@
                         <p class="text-slate-600 mt-3 flex-grow">Desconecta del estrés. Disfruta de un masaje
                             terapéutico de cuerpo completo seguido de una sesión de reflexología podal para equilibrar
                             tu energía.</p>
-                        <a href="https://wa.me/51987654321?text=Hola!%20Quisiera%20reservar%20el%20Escape%20de%20Bienestar."
+                        <a href="https://wa.me/51956672297?text=Hola!%20Quisiera%20reservar%20el%20Escape%20de%20Bienestar."
                             target="_blank"
                             class="mt-5 inline-block text-center bg-transparent border-2 border-aura-pink-accent text-aura-pink-accent px-6 py-2 rounded-full font-medium hover:bg-aura-pink-accent hover:text-white transition-colors">
                             Quiero este servicio
@@ -159,7 +163,6 @@
                     </div>
                 </div>
 
-                <!-- Card 3 -->
                 <div
                     class="bg-aura-beige rounded-lg shadow-xl overflow-hidden flex flex-col transition-transform transform hover:-translate-y-2">
                     <img src="https://placehold.co/600x400/F9ECEB/DEA19A?text=Colorimetría+Profesional"
@@ -169,7 +172,7 @@
                         <p class="text-slate-600 mt-3 flex-grow">Nuestros expertos en color analizarán tu tono de piel y
                             estilo para crear el look perfecto para ti, usando técnicas modernas como balayage o
                             babylights.</p>
-                        <a href="https://wa.me/51987654321?text=Hola!%20Quisiera%20información%20sobre%20Colorimetría."
+                        <a href="https://wa.me/51956672297?text=Hola!%20Quisiera%20información%20sobre%20Colorimetría."
                             target="_blank"
                             class="mt-5 inline-block text-center bg-transparent border-2 border-aura-pink-accent text-aura-pink-accent px-6 py-2 rounded-full font-medium hover:bg-aura-pink-accent hover:text-white transition-colors">
                             Quiero este servicio
@@ -177,17 +180,53 @@
                     </div>
                 </div>
             </div>
+            <div class="mt-16">
+                <h3 class="text-3xl font-bold text-center text-aura-text">Servicios</h3>
+                <div class="mt-8 grid md:grid-cols-4 gap-8">
+                    <div class="bg-aura-beige rounded-lg shadow-xl overflow-hidden flex flex-col transition-transform transform hover:-translate-y-2">
+                        <img src="./assets/img/WhatsApp Image 2025-11-07 at 10.18.04 PM.jpeg" alt="Lifting de pestañas" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h4 class="text-xl font-semibold text-aura-text">Lifting de pestañas</h4>
+                            <p class="text-slate-600 mt-2 flex-grow">Realza tu mirada con curvatura natural y duración de semanas.</p>
+                            <a href="https://wa.me/51956672297?text=Hola!%20Quiero%20información%20sobre%20Lifting%20de%20pestañas" target="_blank" class="mt-4 inline-block text-center bg-transparent border-2 border-aura-pink-accent text-aura-pink-accent px-6 py-2 rounded-full font-medium hover:bg-aura-pink-accent hover:text-white transition-colors">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="bg-aura-beige rounded-lg shadow-xl overflow-hidden flex flex-col transition-transform transform hover:-translate-y-2">
+                        <img src="./assets/img/unnamed (1).jpg" alt="Laminado de cejas" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h4 class="text-xl font-semibold text-aura-text">Laminado de cejas</h4>
+                            <p class="text-slate-600 mt-2 flex-grow">Ordena y define tus cejas con un acabado pulido y natural.</p>
+                            <a href="https://wa.me/51956672297?text=Hola!%20Quiero%20información%20sobre%20Laminado%20de%20cejas" target="_blank" class="mt-4 inline-block text-center bg-transparent border-2 border-aura-pink-accent text-aura-pink-accent px-6 py-2 rounded-full font-medium hover:bg-aura-pink-accent hover:text-white transition-colors">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="bg-aura-beige rounded-lg shadow-xl overflow-hidden flex flex-col transition-transform transform hover:-translate-y-2">
+                        <img src="./assets/img/cubrimiento/WhatsApp Image 2025-11-07 at 10.17.13 PM.jpeg" alt="Uñas Acrílicas" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h4 class="text-xl font-semibold text-aura-text">Uñas Acrílicas</h4>
+                            <p class="text-slate-600 mt-2 flex-grow">Extensiones resistentes y diseños personalizados para tus manos.</p>
+                            <a href="https://wa.me/51956672297?text=Hola!%20Quiero%20información%20sobre%20Uñas%20Acrílicas" target="_blank" class="mt-4 inline-block text-center bg-transparent border-2 border-aura-pink-accent text-aura-pink-accent px-6 py-2 rounded-full font-medium hover:bg-aura-pink-accent hover:text-white transition-colors">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="bg-aura-beige rounded-lg shadow-xl overflow-hidden flex flex-col transition-transform transform hover:-translate-y-2">
+                        <img src="./assets/img/Alisado/WhatsApp Image 2025-11-07 at 10.40.38 PM.jpeg" alt="Alisado permanente" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h4 class="text-xl font-semibold text-aura-text">Alisado permanente</h4>
+                            <p class="text-slate-600 mt-2 flex-grow">Cabello liso, brillante y sin frizz con resultados duraderos.</p>
+                            <a href="https://wa.me/51956672297?text=Hola!%20Quiero%20información%20sobre%20Alisado%20permanente" target="_blank" class="mt-4 inline-block text-center bg-transparent border-2 border-aura-pink-accent text-aura-pink-accent px-6 py-2 rounded-full font-medium hover:bg-aura-pink-accent hover:text-white transition-colors">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Sección 3: Propuesta de Valor / "El Toque Personal" -->
     <section id="nosotros" class="py-20 md:py-28 bg-aura-pink-light">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="md:pr-10">
-                    <img src="https://placehold.co/600x700/F5F1ED/DEA19A?text=Foto+de+Marie"
+                    <img src="./assets/img/foto_de_marie.webp"
                         alt="Marie, fundadora de Marie Salón & Spa"
-                        class="rounded-lg shadow-2xl w-full h-full max-h-[600px] object-cover object-top"
+                        class="rounded-lg shadow-2xl w-full"
                         loading="lazy">
                 </div>
                 <div class="md:pl-10">
@@ -212,7 +251,6 @@
         </div>
     </section>
 
-    <!-- Sección 4: Prueba Social (Feed de Instagram) -->
     <section id="feed" class="py-20 md:py-28 bg-white">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-5xl font-bold text-aura-text">Conoce nuestro trabajo (y clientas felices)</h2>
@@ -222,48 +260,32 @@
                 la vida del salón día a día.</p>
 
             <div class="mt-12 max-w-4xl mx-auto">
-                <div class="p-8 bg-gray-100 rounded-lg text-gray-500">
-                    <p class="text-lg font-medium">Aquí iría el widget de Instagram (ej. Elfsight o Lightwidget).</p>
-                    <p class="mt-2">Esto mostraría una cuadrícula 3x2 de nuestras últimas fotos y videos para generar
-                        confianza visual.</p>
-                </div>
-                <!-- Simulación de la cuadrícula para demostración visual -->
-                <div class="grid grid-cols-3 gap-2 md:gap-4 mt-4 opacity-50">
-                    <img src="https://placehold.co/400x400/F9ECEB/DEA19A?text=@MarieSpa"
-                        class="w-full h-full object-cover aspect-square rounded" loading="lazy">
-                    <img src="https://placehold.co/400x400/F9ECEB/DEA19A?text=@MarieSpa"
-                        class="w-full h-full object-cover aspect-square rounded" loading="lazy">
-                    <img src="https://placehold.co/400x400/F9ECEB/DEA19A?text=@MarieSpa"
-                        class="w-full h-full object-cover aspect-square rounded" loading="lazy">
-                    <img src="https://placehold.co/400x400/F9ECEB/DEA19A?text=@MarieSpa"
-                        class="w-full h-full object-cover aspect-square rounded" loading="lazy">
-                    <img src="https://placehold.co/400x400/F9ECEB/DEA19A?text=@MarieSpa"
-                        class="w-full h-full object-cover aspect-square rounded" loading="lazy">
-                    <img src="https://placehold.co/400x400/F9ECEB/DEA19A?text=@MarieSpa"
-                        class="w-full h-full object-cover aspect-square rounded" loading="lazy">
+                <div id="instagram-widget" class="w-full"></div>
+                <div id="tiktok-widget" class="w-full mt-6"></div>
+                <div id="instagram-grid" class="grid grid-cols-3 gap-2 md:gap-4 mt-4 opacity-50">
+                    <img src="./assets/img/Alisado/WhatsApp Image 2025-11-07 at 10.22.35 PM (1).jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy">
+                    <img src="./assets/img/Alisado/WhatsApp Image 2025-11-07 at 10.22.35 PM (2).jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy">
+                    <img src="./assets/img/Alisado/WhatsApp Image 2025-11-07 at 10.40.38 PM (1).jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy">
+                    <img src="./assets/img/cubrimiento/WhatsApp Image 2025-11-07 at 10.17.13 PM (1).jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy">
+                    <img src="./assets/img/cubrimiento/WhatsApp Image 2025-11-07 at 10.17.13 PM.jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy">
+                    <img src="./assets/img/Alisado/WhatsApp Image 2025-11-07 at 10.22.35 PM (3).jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección 5: Ubicación y Horarios (Google Maps) -->
     <section id="ubicacion" class="py-20 md:py-28 bg-aura-beige">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-12">
                 <div class="w-full h-80 md:h-full rounded-lg shadow-xl overflow-hidden min-h-[400px]">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31599.333838622114!2d-79.04939226154563!3d-8.111977717452643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3d9b3e107c73%3A0x8a39d8e906c6411!2sPlaza%20de%20Armas%20de%20Trujillo!5e0!3m2!1ses!2spe!4v1678888888888!5m2!1ses!2spe"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    <iframe src="https://www.google.com/maps?q=Tadeo%20Monagas%201201%20La%20Esperanza%20La%20Libertad%20Per%C3%BA&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="flex flex-col justify-center">
                     <h2 class="text-4xl md:text-5xl font-bold text-aura-text">Encuéntranos Fácilmente</h2>
                     <div class="mt-8 space-y-6">
                         <div>
                             <h3 class="text-2xl font-semibold text-aura-text">Dirección</h3>
-                            <p class="text-lg text-slate-600 mt-1">Av. Larco 123, Urb. La Merced<br>Trujillo, La
-                                Libertad, Perú</p>
+                            <p class="text-lg text-slate-600 mt-1">Tadeo Monagas #1201, La Esperanza (Parte Alta)<br>La Libertad, Perú</p>
                         </div>
                         <div>
                             <h3 class="text-2xl font-semibold text-aura-text">Horarios de Atención</h3>
@@ -280,14 +302,13 @@
         </div>
     </section>
 
-    <!-- Sección 6: CTA Final y Contacto -->
     <section id="contacto" class="py-20 md:py-28 bg-aura-pink-light text-center">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-bold text-aura-text">¿Lista para tu momento de bienestar?</h2>
             <p class="text-lg text-slate-600 mt-4 max-w-xl mx-auto">Tu pausa te está esperando. Haz clic abajo para
                 agendar tu cita por WhatsApp o déjanos tu consulta.</p>
 
-            <a href="https://wa.me/51987654321?text=Hola!%20Quisiera%20reservar%20una%20cita%20en%20Aura%20Spa."
+            <a href="https://wa.me/51956672297?text=Hola!%20Quisiera%20reservar%20una%20cita%20en%20Aura%20Spa."
                 target="_blank"
                 class="my-8 inline-block bg-aura-pink-accent text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-aura-pink-accent-hover transition-transform transform hover:scale-105 shadow-lg">
                 Reservar mi Cita por WhatsApp
@@ -323,10 +344,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-12 bg-aura-text text-slate-300 text-center">
         <div class="container mx-auto px-6">
-            <p>&copy; 2025 Marie Salón & Spa. Todos los derechos reservados.</p>
+            <p>© 2025 Marie Salón & Spa. Todos los derechos reservados.</p>
             <h5 class="text-sm mt-1">Diseñado por <a href="https://pixeliaweb.netlify.app/"
                     class="text-aura-pink-accent font-medium" target="_blank">@web.pixelia</a></h5>
         </div>
@@ -364,6 +384,117 @@
                     }
                 });
             });
+
+            const igGrid = document.getElementById('instagram-grid');
+            const igWidget = document.getElementById('instagram-widget');
+            const tkWidget = document.getElementById('tiktok-widget');
+            if (igGrid) {
+                const token = localStorage.getItem('instagram_token');
+                const limit = 6;
+                const widgetIframe = localStorage.getItem('instagram_widget_iframe');
+                const elfsightId = localStorage.getItem('instagram_elfsight_id');
+                const tiktokIframe = localStorage.getItem('tiktok_widget_iframe');
+                const tiktokElfsightId = localStorage.getItem('tiktok_elfsight_id');
+                const manualItemsStr = localStorage.getItem('media_items');
+
+                const useIframeWidget = (url) => {
+                    if (!igWidget || !url) return false;
+                    const script = document.createElement('script');
+                    script.src = 'https://cdn.lightwidget.com/widgets/lightwidget.js';
+                    script.defer = true;
+                    document.head.appendChild(script);
+                    const iframe = document.createElement('iframe');
+                    iframe.src = url;
+                    iframe.scrolling = 'no';
+                    iframe.allow = 'autoplay *; clipboard-write';
+                    iframe.style.width = '100%';
+                    iframe.style.border = '0';
+                    iframe.style.overflow = 'hidden';
+                    igWidget.appendChild(iframe);
+                    igGrid.classList.add('hidden');
+                    return true;
+                };
+
+                const useElfsight = (id) => {
+                    if (!igWidget || !id) return false;
+                    const script = document.createElement('script');
+                    script.src = 'https://static.elfsight.com/platform/platform.js';
+                    script.setAttribute('data-use-service-core', '');
+                    script.defer = true;
+                    document.head.appendChild(script);
+                    const holder = document.createElement('div');
+                    holder.className = `elfsight-app-${id}`;
+                    igWidget.appendChild(holder);
+                    igGrid.classList.add('hidden');
+                    return true;
+                };
+
+                const useTikTokElfsight = (id) => {
+                    if (!tkWidget || !id) return false;
+                    const script = document.createElement('script');
+                    script.src = 'https://static.elfsight.com/platform/platform.js';
+                    script.setAttribute('data-use-service-core', '');
+                    script.defer = true;
+                    document.head.appendChild(script);
+                    const holder = document.createElement('div');
+                    holder.className = `elfsight-app-${id}`;
+                    tkWidget.appendChild(holder);
+                    igGrid.classList.add('hidden');
+                    return true;
+                };
+
+                const useTikTokIframe = (url) => {
+                    if (!tkWidget || !url) return false;
+                    const iframe = document.createElement('iframe');
+                    iframe.src = url;
+                    iframe.scrolling = 'no';
+                    iframe.style.width = '100%';
+                    iframe.style.border = '0';
+                    iframe.style.overflow = 'hidden';
+                    tkWidget.appendChild(iframe);
+                    igGrid.classList.add('hidden');
+                    return true;
+                };
+
+                if (widgetIframe) {
+                    useIframeWidget(widgetIframe);
+                }
+                if (elfsightId) {
+                    useElfsight(elfsightId);
+                }
+                if (tiktokElfsightId) {
+                    useTikTokElfsight(tiktokElfsightId);
+                } else if (tiktokIframe) {
+                    useTikTokIframe(tiktokIframe);
+                }
+                if (manualItemsStr) {
+                    try {
+                        const items = JSON.parse(manualItemsStr);
+                        if (Array.isArray(items) && items.length) {
+                            igGrid.innerHTML = items.slice(0, limit).map(it => {
+                                const img = `<img src="${it.src}" class="w-full h-full object-cover aspect-square rounded" loading="lazy">`;
+                                return it.href ? `<a href="${it.href}" target="_blank" rel="noopener">${img}</a>` : img;
+                            }).join('');
+                            igGrid.classList.remove('opacity-50');
+                        }
+                    } catch (e) {}
+                }
+                if (token) {
+                    fetch(`https://graph.instagram.com/me/media?fields=id,media_url,permalink,media_type,thumbnail_url&access_token=${token}&limit=${limit}`)
+                        .then(r => r.json())
+                        .then(d => {
+                            if (!d || !d.data || !Array.isArray(d.data)) return;
+                            const items = d.data.slice(0, limit);
+                            igGrid.innerHTML = items.map(m => {
+                                const src = m.media_type === 'VIDEO' && m.thumbnail_url ? m.thumbnail_url : m.media_url;
+                                const href = m.permalink;
+                                return `<a href="${href}" target="_blank" rel="noopener"><img src="${src}" class="w-full h-full object-cover aspect-square rounded" loading="lazy"></a>`;
+                            }).join('');
+                            igGrid.classList.remove('opacity-50');
+                        })
+                        .catch(() => {});
+                }
+            }
         });
     </script>
 
