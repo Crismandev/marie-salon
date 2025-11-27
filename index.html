@@ -165,8 +165,22 @@
 
                 <div
                     class="bg-aura-beige rounded-lg shadow-xl overflow-hidden flex flex-col transition-transform transform hover:-translate-y-2">
-                    <img src="https://placehold.co/600x400/F9ECEB/DEA19A?text=Colorimetría+Profesional"
-                        alt="Diseño de color y corte" class="w-full h-56 object-cover" loading="lazy">
+                    <div id="carousel-cubrimiento" class="relative w-full h-56 overflow-hidden">
+                        <img src="./assets/img/cubrimiento/WhatsApp Image 2025-11-07 at 10.17.13 PM (1).jpeg" alt="Diseño de color y corte" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100" loading="lazy">
+                        <img src="./assets/img/cubrimiento/WhatsApp Image 2025-11-07 at 10.17.13 PM.jpeg" alt="Diseño de color y corte" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0" loading="lazy">
+                        <img src="./assets/img/cubrimiento/WhatsApp Image 2025-11-07 at 10.17.14 PM.jpeg" alt="Diseño de color y corte" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0" loading="lazy">
+                        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white text-aura-text rounded-full p-1" data-prev>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M15.78 4.22a.75.75 0 010 1.06L9.06 12l6.72 6.72a.75.75 0 11-1.06 1.06l-7.25-7.25a.75.75 0 010-1.06l7.25-7.25a.75.75 0 011.06 0z" clip-rule="evenodd"/></svg>
+                        </button>
+                        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white text-aura-text rounded-full p-1" data-next>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M8.22 4.22a.75.75 0 000 1.06L14.94 12l-6.72 6.72a.75.75 0 101.06 1.06l7.25-7.25a.75.75 0 000-1.06L9.28 4.22a.75.75 0 00-1.06 0z" clip-rule="evenodd"/></svg>
+                        </button>
+                        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1" data-dots>
+                            <span class="w-2 h-2 rounded-full bg-white/70"></span>
+                            <span class="w-2 h-2 rounded-full bg-white/40"></span>
+                            <span class="w-2 h-2 rounded-full bg-white/40"></span>
+                        </div>
+                    </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <h3 class="text-2xl font-semibold text-aura-text">Colorimetría y Diseño de Look</h3>
                         <p class="text-slate-600 mt-3 flex-grow">Nuestros expertos en color analizarán tu tono de piel y
@@ -494,6 +508,27 @@
                         })
                         .catch(() => {});
                 }
+            }
+
+            const carousel = document.getElementById('carousel-cubrimiento');
+            if (carousel) {
+                const slides = Array.from(carousel.querySelectorAll('img'));
+                const dots = Array.from(carousel.querySelectorAll('[data-dots] span'));
+                let idx = 0;
+                const show = (i) => {
+                    idx = (i + slides.length) % slides.length;
+                    slides.forEach((s, k) => s.style.opacity = k === idx ? '1' : '0');
+                    dots.forEach((d, k) => d.className = 'w-2 h-2 rounded-full ' + (k === idx ? 'bg-white/70' : 'bg-white/40'));
+                };
+                const prev = carousel.querySelector('[data-prev]');
+                const next = carousel.querySelector('[data-next]');
+                prev && prev.addEventListener('click', () => show(idx - 1));
+                next && next.addEventListener('click', () => show(idx + 1));
+                let timer = setInterval(() => show(idx + 1), 5000);
+                carousel.addEventListener('mouseenter', () => clearInterval(timer));
+                carousel.addEventListener('mouseleave', () => { timer = setInterval(() => show(idx + 1), 5000); });
+                dots.forEach((d, k) => d.addEventListener('click', () => show(k)));
+                show(0);
             }
         });
     </script>
