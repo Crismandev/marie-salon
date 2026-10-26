@@ -47,6 +47,25 @@
             font-family: 'Playfair Display', serif;
         }
     </style>
+<style id="mejora-ui">
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.is-in{opacity:1;transform:none}
+#servicios .shadow-xl{transition:transform .35s ease,box-shadow .35s ease}
+#servicios .shadow-xl:hover{box-shadow:0 22px 45px -18px rgba(222,161,154,.6)}
+#servicios .shadow-xl img{transition:transform .6s ease}
+#servicios .shadow-xl:hover img{transform:scale(1.05)}
+#promociones .shadow-xl{transition:transform .35s ease,box-shadow .35s ease}
+#promociones .shadow-xl:hover{transform:translateY(-6px)}
+.ig-grid img{transition:transform .5s ease,filter .5s ease;filter:saturate(.9)}
+.ig-grid a,.ig-grid img{overflow:hidden}
+.ig-grid img:hover{transform:scale(1.04);filter:saturate(1.1)}
+#nosotros img{transition:transform .8s ease}
+#nosotros img:hover{transform:scale(1.02) rotate(-.5deg)}
+a[href*="wa.me"]{transition:all .25s ease}
+a[href*="wa.me"]:active{transform:scale(.97)}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important;animation:none!important}}
+</style>
 </head>
 
 <body class="bg-white">
@@ -130,7 +149,7 @@
             <div class="mt-16 grid md:grid-cols-3 gap-8">
                 <div
                     class="bg-aura-beige rounded-lg shadow-xl overflow-hidden flex flex-col transition-transform transform hover:-translate-y-2">
-                    <img src="https://placehold.co/600x400/F9ECEB/DEA19A?text=Ritual+de+Renovación"
+                    <img src="./assets/img/servicios/ritual-renovacion.webp"
                         alt="Tratamiento de renovación de look y facial" class="w-full h-56 object-cover"
                         loading="lazy">
                     <div class="p-8 flex flex-col flex-grow">
@@ -147,7 +166,7 @@
 
                 <div
                     class="bg-aura-beige rounded-lg shadow-xl overflow-hidden flex flex-col transition-transform transform hover:-translate-y-2">
-                    <img src="https://placehold.co/600x400/F9ECEB/DEA19A?text=Escape+de+Bienestar"
+                    <img src="./assets/img/servicios/escape-bienestar.webp"
                         alt="Masaje terapéutico y reflexología" class="w-full h-56 object-cover" loading="lazy">
                     <div class="p-8 flex flex-col flex-grow">
                         <h3 class="text-2xl font-semibold text-aura-text">Escape de Bienestar (Masaje + Reflexología)
@@ -222,7 +241,7 @@
                         </div>
                     </div>
                     <div class="bg-aura-beige rounded-lg shadow-xl overflow-hidden flex flex-col transition-transform transform hover:-translate-y-2">
-                        <img src="./assets/img/Alisado/WhatsApp Image 2025-11-07 at 10.40.38 PM.jpeg" alt="Alisado permanente" class="w-full h-48 object-cover" loading="lazy">
+                        <img alt="Trabajo real de Marie Salón" src="./assets/img/Alisado/WhatsApp Image 2025-11-07 at 10.40.38 PM.jpeg" alt="Alisado permanente" class="w-full h-48 object-cover" loading="lazy">
                         <div class="p-6 flex flex-col flex-grow">
                             <h4 class="text-xl font-semibold text-aura-text">Alisado permanente</h4>
                             <p class="text-slate-600 mt-2 flex-grow">Cabello liso, brillante y sin frizz con resultados duraderos.</p>
@@ -276,13 +295,13 @@
             <div class="mt-12 max-w-4xl mx-auto">
                 <div id="instagram-widget" class="w-full"></div>
                 <div id="tiktok-widget" class="w-full mt-6"></div>
-                <div id="instagram-grid" class="grid grid-cols-3 gap-2 md:gap-4 mt-4 opacity-50">
-                    <img src="./assets/img/Alisado/WhatsApp Image 2025-11-07 at 10.22.35 PM (1).jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy">
-                    <img src="./assets/img/Alisado/WhatsApp Image 2025-11-07 at 10.22.35 PM (2).jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy">
-                    <img src="./assets/img/Alisado/WhatsApp Image 2025-11-07 at 10.40.38 PM (1).jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy">
-                    <img src="./assets/img/cubrimiento/WhatsApp Image 2025-11-07 at 10.17.13 PM (1).jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy">
-                    <img src="./assets/img/cubrimiento/WhatsApp Image 2025-11-07 at 10.17.13 PM.jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy">
-                    <img src="./assets/img/Alisado/WhatsApp Image 2025-11-07 at 10.22.35 PM (3).jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy">
+                <div id="instagram-grid" class="grid grid-cols-3 gap-2 md:gap-4 mt-4 ig-grid">
+                    <img alt="Trabajo real de Marie Salón" src="./assets/img/Alisado/WhatsApp Image 2025-11-07 at 10.22.35 PM (1).jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy" alt="Trabajo real de Marie Salón">
+                    <img alt="Trabajo real de Marie Salón" src="./assets/img/Alisado/WhatsApp Image 2025-11-07 at 10.22.35 PM (2).jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy" alt="Trabajo real de Marie Salón">
+                    <img alt="Trabajo real de Marie Salón" src="./assets/img/Alisado/WhatsApp Image 2025-11-07 at 10.40.38 PM (1).jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy" alt="Trabajo real de Marie Salón">
+                    <img src="./assets/img/cubrimiento/WhatsApp Image 2025-11-07 at 10.17.13 PM (1).jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy" alt="Trabajo real de Marie Salón">
+                    <img src="./assets/img/cubrimiento/WhatsApp Image 2025-11-07 at 10.17.13 PM.jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy" alt="Trabajo real de Marie Salón">
+                    <img alt="Trabajo real de Marie Salón" src="./assets/img/Alisado/WhatsApp Image 2025-11-07 at 10.22.35 PM (3).jpeg" class="w-full h-full object-cover aspect-square rounded" loading="lazy" alt="Trabajo real de Marie Salón">
                 </div>
             </div>
         </div>
@@ -486,7 +505,7 @@
                         const items = JSON.parse(manualItemsStr);
                         if (Array.isArray(items) && items.length) {
                             igGrid.innerHTML = items.slice(0, limit).map(it => {
-                                const img = `<img src="${it.src}" class="w-full h-full object-cover aspect-square rounded" loading="lazy">`;
+                                const img = `<img src="${it.src}" class="w-full h-full object-cover aspect-square rounded" loading="lazy" alt="Trabajo real de Marie Salón">`;
                                 return it.href ? `<a href="${it.href}" target="_blank" rel="noopener">${img}</a>` : img;
                             }).join('');
                             igGrid.classList.remove('opacity-50');
@@ -502,7 +521,7 @@
                             igGrid.innerHTML = items.map(m => {
                                 const src = m.media_type === 'VIDEO' && m.thumbnail_url ? m.thumbnail_url : m.media_url;
                                 const href = m.permalink;
-                                return `<a href="${href}" target="_blank" rel="noopener"><img src="${src}" class="w-full h-full object-cover aspect-square rounded" loading="lazy"></a>`;
+                                return `<a href="${href}" target="_blank" rel="noopener"><img src="${src}" class="w-full h-full object-cover aspect-square rounded" loading="lazy" alt="Trabajo real de Marie Salón"></a>`;
                             }).join('');
                             igGrid.classList.remove('opacity-50');
                         })
@@ -533,6 +552,12 @@
         });
     </script>
 
+<script>
+(function(){if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;
+var els=document.querySelectorAll('section:not(#hero) h2, section:not(#hero) h3, section:not(#hero) .shadow-xl, section:not(#hero) .shadow-2xl, #nosotros blockquote, #nosotros p, .ig-grid img, #contacto form');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+els.forEach(function(el,i){el.classList.add('reveal');el.style.transitionDelay=((i%4)*80)+'ms';io.observe(el)});})();
+</script>
 </body>
 
 </html>
